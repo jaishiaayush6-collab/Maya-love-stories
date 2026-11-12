@@ -1,0 +1,121 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #fff0f6;
+  color: #382638;
+  line-height: 1.6;
+}
+
+.header {
+  text-align: center;
+  padding: 35px 15px;
+  color: white;
+  background: linear-gradient(135deg, #ec4899, #8b5cf6);
+}
+
+.header h1 {
+  font-size: 30px;
+}
+
+.container {
+  width: 92%;
+  max-width: 900px;
+  margin: 25px auto;
+}
+
+.welcome,
+.write-area {
+  background: white;
+  padding: 22px;
+  border-radius: 16px;
+  margin: 20px 0;
+  box-shadow: 0 4px 15px #00000012;
+}
+
+h2 {
+  color: #d63384;
+  margin: 15px 0;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 13px;
+  margin: 8px 0;
+  border: 1px solid #e8b6d0;
+  border-radius: 10px;
+  font-size: 16px;
+  font-family: inherit;
+}
+
+textarea {
+  min-height: 130px;
+  resize: vertical;
+}
+
+button {
+  background: #e83e8c;
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background: #c22570;
+}
+
+.story-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 15px;
+}
+
+.story-card {
+  background: white;
+  padding: 18px;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px #00000010;
+}
+
+.story-card h3 {
+  color: #bd2875;
+}
+
+.story-card p {
+  margin: 8px 0;
+}
+
+#generated-story {
+  background: #fff0f6;
+  padding: 15px;
+  margin-top: 15px;
+  border-radius: 10px;
+  white-space: pre-wrap;
+}
+
+footer {
+  text-align: center;
+  padding: 25px;
+  background: #40223b;
+  color: white;
+  margin-top: 35px;
+}
+
+@media (max-width: 600px) {
+  .header h1 {
+    font-size: 24px;
+  }
+
+  .container {
+    width: 94%;
+  }
+}
