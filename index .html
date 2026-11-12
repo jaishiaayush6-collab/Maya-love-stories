@@ -1,92 +1,84 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="ne">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#d94682">
-<title>Maya Love Stories ❤️</title>
-<style>
-:root{--bg:#fff5fa;--panel:#fff;--text:#352333;--muted:#806b7b;--accent:#d94682;--accent2:#9b5de5;--line:#f0dce8;--shadow:0 12px 35px #6b31501a}
-*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,"Noto Sans Devanagari",sans-serif;background:var(--bg);color:var(--text);transition:.2s}
-body.dark{--bg:#17131c;--panel:#251d2c;--text:#f8edf8;--muted:#c4b2c7;--accent:#f06ca8;--accent2:#b18cff;--line:#49364f;--shadow:0 12px 35px #0005}
-body.purple{--bg:#f5f0ff;--panel:#fff;--text:#30234a;--muted:#74658d;--accent:#8b5cf6;--accent2:#d946ef;--line:#e6dcfa}
-header{padding:24px 16px 34px;text-align:center;background:linear-gradient(130deg,var(--accent),var(--accent2));color:white}
-header h1{margin:0;font-size:clamp(27px,5vw,42px)}header p{margin:8px 0 0}
-.wrap{max-width:980px;margin:-18px auto 40px;padding:0 14px}.toolbar,.panel,.story{background:var(--panel);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow)}
-.toolbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between;padding:12px;margin-bottom:16px}
-nav{display:flex;gap:8px;flex-wrap:wrap}button,select,input,textarea{font:inherit}button{border:0;border-radius:12px;padding:10px 14px;background:var(--accent);color:white;cursor:pointer;font-weight:650}button.secondary{background:transparent;color:var(--text);border:1px solid var(--line)}button:hover{filter:brightness(1.06)}
-select{padding:9px;border:1px solid var(--line);border-radius:10px;background:var(--panel);color:var(--text)}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}.panel{padding:18px;margin-bottom:16px}.story{padding:17px}.story h3{margin:8px 0}.story p{color:var(--muted);line-height:1.7}.tag{font-size:12px;color:var(--accent);font-weight:700}
-h2{margin:0 0 12px}label{display:block;margin:10px 0 6px;font-weight:650}input,textarea{width:100%;padding:11px;border:1px solid var(--line);border-radius:11px;background:var(--bg);color:var(--text)}textarea{min-height:110px;resize:vertical}
-.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.hidden{display:none}.result{white-space:pre-wrap;line-height:1.8;color:var(--muted);margin-top:12px}.empty{color:var(--muted)}footer{text-align:center;color:var(--muted);padding:22px}
-@media(max-width:560px){.toolbar{align-items:stretch}.toolbar nav{width:100%}.toolbar nav button{flex:1}}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Maya Love Stories</title>
+
+    <meta name="description" content="नेपाली प्रेम कथा, रोमान्टिक कथा र मन छुने मायाका कथाहरू।">
+
+    <!-- App Manifest -->
+    <link rel="manifest" href="./manifest.json">
+
+    <!-- App Theme Color -->
+    <meta name="theme-color" content="#ff4d94">
+
+    <!-- CSS File -->
+    <link rel="stylesheet" href="./css/style.css">
 </head>
+
 <body>
-<header><h1>❤️ Maya Love Stories</h1><p>मन छुने कथा, आफ्नै शब्दमा आफ्नै संसार</p></header>
-<main class="wrap">
- <div class="toolbar">
-  <nav>
-   <button onclick="showPage('home')">🏠 Home</button>
-   <button class="secondary" onclick="showPage('write')">✍️ कथा लेख्नुहोस्</button>
-   <button class="secondary" onclick="showPage('saved')">🔖 Saved</button>
-  </nav>
-  <label style="margin:0">Theme
-   <select id="theme" onchange="setTheme(this.value)">
-    <option value="pink">Pink Romantic</option><option value="purple">Purple Premium</option><option value="dark">Dark</option>
-   </select>
-  </label>
- </div>
 
- <section id="home">
-  <div class="panel">
-   <h2>📖 प्रेमकथाहरू</h2>
-   <p class="empty">कथा छान्नुहोस् र पढ्नुहोस्। मन परेको कथा Saved मा राख्न सक्नुहुन्छ।</p>
-  </div>
-  <div class="grid" id="storyList"></div>
-  <div class="panel" style="margin-top:16px">
-   <h2>💌 आफ्नै नामको कथा बनाउनुहोस्</h2>
-   <label for="name1">पहिलो पात्रको नाम</label><input id="name1" placeholder="जस्तै: आर्यन">
-   <label for="name2">दोस्रो पात्रको नाम</label><input id="name2" placeholder="जस्तै: सृष्टि">
-   <label for="mood">कथाको प्रकार</label><select id="mood"><option>मिठो प्रेमकथा</option><option>दूरीको कथा</option><option>प्रेरणादायी मित्रता</option></select>
-   <div class="actions"><button onclick="generateStory()">कथा बनाउनुहोस्</button></div>
-   <div id="generated" class="result" aria-live="polite"></div>
-   <p class="empty" style="font-size:13px">यो नमुना कथा बनाउने सुविधा हो; वास्तविक AI सेवा जोड्न छुट्टै सुरक्षित backend/API चाहिन्छ।</p>
-  </div>
- </section>
+    <!-- Website Header -->
+    <header>
+        <h1>💗 Maya Love Stories</h1>
+        <p>मायाका कथा, मनका भावना</p>
+    </header>
 
- <section id="write" class="hidden">
-  <div class="panel"><h2>✍️ आफ्नो कथा लेख्नुहोस्</h2>
-   <label for="storyTitle">कथाको शीर्षक</label><input id="storyTitle" placeholder="शीर्षक लेख्नुहोस्">
-   <label for="storyText">कथाको विवरण</label><textarea id="storyText" placeholder="यहाँ आफ्नो कथा लेख्नुहोस्..."></textarea>
-   <div class="actions"><button onclick="publishStory()">Save गर्नुहोस्</button></div>
-   <p class="empty">तपाईंले लेखेको कथा यही ब्राउजरमा मात्र सुरक्षित हुन्छ।</p>
-  </div>
- </section>
+    <!-- Main Content -->
+    <main id="app">
 
- <section id="saved" class="hidden">
-  <div class="panel"><h2>🔖 सुरक्षित कथाहरू</h2><div id="savedList" class="empty">अहिलेसम्म कुनै कथा सुरक्षित गरिएको छैन।</div></div>
- </section>
-</main>
-<footer>Made with ❤️ for story lovers · Maya Love Stories</footer>
-<script>
-const starterStories=[
- {id:'s1',title:'पहिलो भेट',type:'मिठो प्रेमकथा',text:'विद्यालयको पुस्तकालयमा भएको एउटा सामान्य भेटबाट उनीहरूको मित्रता सुरु भयो। साना कुराकानी, आपसी सम्मान र सहयोगले त्यो मित्रता सुन्दर सम्झनामा बदलियो।'},
- {id:'s2',title:'टाढा भए पनि नजिक',type:'दूरीको कथा',text:'दुई साथी फरक सहरमा थिए। व्यस्त दिनहरूबीच उनीहरू एकअर्कालाई हौसला दिन्थे। उनीहरूले सिके—सम्बन्धलाई बलियो बनाउने कुरा दूरी होइन, विश्वास र सम्मान हो।'},
- {id:'s3',title:'सपना सँगै',type:'प्रेरणादायी कथा',text:'उनीहरूले आफ्ना लक्ष्यबारे खुलेर कुरा गरे। एकअर्काको सपना रोक्नुको सट्टा साथ दिने निर्णय गरे। समयसँगै दुवैले आफ्नो मेहनतबाट नयाँ बाटो बनाए।'}
-];
-let stories=[...starterStories];
-let saved=JSON.parse(localStorage.getItem('mayaSaved')||'[]');
-function setTheme(t){document.body.className=t==='pink'?'':t;localStorage.setItem('mayaTheme',t)}
-function showPage(id){['home','write','saved'].forEach(x=>document.getElementById(x).classList.toggle('hidden',x!==id));if(id==='saved')renderSaved();window.scrollTo({top:0,behavior:'smooth'})}
-function renderStories(){document.getElementById('storyList').innerHTML=stories.map(s=>`<article class="story"><span class="tag">${escapeHtml(s.type||'आफ्नो कथा')}</span><h3>${escapeHtml(s.title)}</h3><p>${escapeHtml(s.text.slice(0,145))}${s.text.length>145?'…':''}</p><div class="actions"><button onclick="readStory('${s.id}')">पढ्नुहोस्</button><button class="secondary" onclick="toggleSave('${s.id}')">🔖 ${saved.includes(s.id)?'Saved':'Save'}</button></div></article>`).join('')}
-function readStory(id){const s=stories.find(x=>x.id===id);if(!s)return;alert(s.title+'\\n\\n'+s.text)}
-function toggleSave(id){saved=saved.includes(id)?saved.filter(x=>x!==id):[...saved,id];localStorage.setItem('mayaSaved',JSON.stringify(saved));renderStories();renderSaved()}
-function renderSaved(){const items=stories.filter(s=>saved.includes(s.id));document.getElementById('savedList').innerHTML=items.length?items.map(s=>`<article class="story" style="margin:10px 0"><b>${escapeHtml(s.title)}</b><p>${escapeHtml(s.text)}</p><button class="secondary" onclick="toggleSave('${s.id}')">हटाउनुहोस्</button></article>`).join(''):'अहिलेसम्म कुनै कथा सुरक्षित गरिएको छैन।'}
-function generateStory(){const a=document.getElementById('name1').value.trim()||'आर्यन',b=document.getElementById('name2').value.trim()||'सृष्टि',m=document.getElementById('mood').value;document.getElementById('generated').textContent=`${a} र ${b} को ${m}\\n\\nएक दिन ${a} र ${b} को भेट भयो। उनीहरूले आफ्ना रुचि, सपना र अनुभव साटे। समयसँगै उनीहरूले एकअर्काको विचारको सम्मान गर्न र कठिन समयमा साथ दिन सिके। उनीहरूको कथा विश्वास, मित्रता र आपसी सम्मानको सुन्दर उदाहरण बन्यो।`}
-function publishStory(){const title=document.getElementById('storyTitle').value.trim(),text=document.getElementById('storyText').value.trim();if(!title||!text){alert('शीर्षक र कथा दुवै लेख्नुहोस्।');return}const s={id:'u'+Date.now(),title,text,type:'पाठकको कथा'};stories.unshift(s);document.getElementById('storyTitle').value='';document.getElementById('storyText').value='';renderStories();alert('कथा यस ब्राउजरमा थपियो।');showPage('home')}
-function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
-document.getElementById('theme').value=localStorage.getItem('mayaTheme')||'pink';setTheme(document.getElementById('theme').value);renderStories();
-</script>
+        <section id="home">
+            <h2>स्वागत छ Maya Love Stories मा!</h2>
+            <p>यहाँ तिमी मायाका कथा पढ्न र आफ्नै कथा लेख्न सक्छौ।</p>
+        </section>
+
+        <!-- Stories will appear here -->
+        <section id="stories">
+            <h2>प्रेम कथाहरू</h2>
+            <div id="story-list"></div>
+        </section>
+
+        <!-- Write Story -->
+        <section id="write-story">
+            <h2>आफ्नो कथा लेख्नुहोस्</h2>
+
+            <input
+                type="text"
+                id="story-title"
+                placeholder="कथाको शीर्षक लेख्नुहोस्"
+            >
+
+            <textarea
+                id="story-content"
+                placeholder="आफ्नो कथा यहाँ लेख्नुहोस्..."
+            ></textarea>
+
+            <button id="save-story">कथा सुरक्षित गर्नुहोस्</button>
+        </section>
+
+    </main>
+
+    <!-- JavaScript Files -->
+    <script src="./js/stories.js" defer></script>
+    <script src="./js/script.js" defer></script>
+
+    <!-- Service Worker Registration -->
+    <script>
+        if ("serviceWorker" in navigator) {
+            window.addEventListener("load", function () {
+                navigator.serviceWorker.register("./service-worker.js")
+                    .then(function () {
+                        console.log("Maya Love Stories Offline Ready!");
+                    })
+                    .catch(function (error) {
+                        console.log("Service Worker Error:", error);
+                    });
+            });
+        }
+    </script>
+
 </body>
 </html>
